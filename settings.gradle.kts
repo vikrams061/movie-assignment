@@ -1,0 +1,10 @@
+include(
+    ":app",
+    ":cache",
+    ":common",
+    ":data",
+    ":domain",
+    ":exception",
+    ":presentation",
+    ":remote"
+)

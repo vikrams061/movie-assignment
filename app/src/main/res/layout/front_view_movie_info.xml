@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/plotContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_margin_normal"
+        android:layout_marginRight="@dimen/padding_margin_normal"
+        android:background="@drawable/rate_background"
+        android:maxLines="1"
+        android:paddingTop="@dimen/padding_margin_extra_small"
+        android:paddingBottom="@dimen/padding_margin_extra_small"
+        android:paddingRight="@dimen/padding_margin_small"
+        android:paddingLeft="@dimen/padding_margin_small"
+        android:textColor="@android:color/white"
+        tools:text="PG-13"
+        />
+
+    <com.ms.square.android.expandabletextview.ExpandableTextView
+        android:id="@+id/plot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/padding_margin_normal"
+        android:layout_marginRight="@dimen/padding_margin_normal"
+        android:layout_marginTop="@dimen/padding_margin_small"
+        expandableTextView:expandDrawable="@drawable/icon_more"
+        >
+
+        <TextView
+            android:id="@id/expandable_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:textColor="#C5C5C5"
+            android:textSize="16sp"
+            />
+
+        <ImageButton
+            android:id="@id/expand_collapse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:background="@android:color/transparent"
+            tools:ignore="ContentDescription"
+            />
+    </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/genres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_margin_small"
+        android:layout_marginBottom="@dimen/padding_margin_normal"
+        android:paddingLeft="@dimen/padding_margin_normal"
+        android:paddingRight="@dimen/padding_margin_normal"
+        app:chipSpacingHorizontal="4dp"
+        />
+</LinearLayout>
