@@ -1,6 +1,12 @@
 # movie-assignment
 Movie-Assignment for Omdb API with clean, testable and maintainable Android application
-
+SOLID principles
+Clean Code Architecture
+Modularisation
+koin DI setup
+Jetpack Compose
+Coroutines
+Unit tests for all the layers.
 ## Libraries, Programming Language and tools
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html)
 - [Koin](https://insert-koin.io/)
