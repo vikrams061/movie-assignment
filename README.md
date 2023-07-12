@@ -1,12 +1,12 @@
 # movie-assignment
-# Movie-Assignment for Omdb API with clean, testable and maintainable Android application with Multi Module Architecture 
+### Movie-Assignment for Omdb API with clean, testable and maintainable Android application with Multi Module Architecture 
 
-# SOLID principles - Separate an application into units, with minimal overlapping between the functions of the individual units
-# Modularisation
-# DI setup - koin 
-# Jetpack Compose - Main Screen SearchMoviesScreen 
-# Coroutines - Flow, State, Dispatchers
-# Unit tests for all the layers.
+### SOLID principles - Separate an application into units, with minimal overlapping between the functions of the individual units
+### Modularisation
+### DI setup - koin 
+### Jetpack Compose - Main Screen SearchMoviesScreen 
+### Coroutines - Flow, State, Dispatchers
+### Unit tests for all the layers.
 
 ## Libraries, Programming Language and tools
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html)
