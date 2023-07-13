@@ -1,4 +1,4 @@
-package movie
+package movie.appmodule
 
 import common.TAG_BOOLEAN_DEBUG
 import common.TAG_OMDB_API_KEY

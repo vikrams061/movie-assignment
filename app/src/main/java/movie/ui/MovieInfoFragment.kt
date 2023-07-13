@@ -1,4 +1,4 @@
-package movie
+package movie.ui
 
 import android.content.res.ColorStateList
 import android.graphics.Color

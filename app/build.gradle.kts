@@ -96,4 +96,16 @@ dependencies {
     implementation(libs.recycler.view)
 
     kapt(libs.glide.compiler)
+
+    testImplementation(libs.assert.j)
+    testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.room.test)
+    testImplementation(libs.test.ext)
+    testImplementation(libs.test.runner)
+    testImplementation(libs.test.rule)
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.4.3")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.4.3")
+
 }

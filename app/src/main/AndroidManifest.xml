@@ -17,10 +17,10 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="s">
         <activity
-            android:name="movie.MovieInfoActivity"
+            android:name="movie.ui.MovieInfoActivity"
             android:theme="@style/TranslucentStatus" />
         <activity
-            android:name="movie.SearchMoviesActivity"
+            android:name="movie.ui.SearchMoviesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

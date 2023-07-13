@@ -4,6 +4,7 @@ import android.app.Application
 import cache.cacheModule
 import data.dataModule
 import domain.domainModule
+import movie.appmodule.appModule
 import presentation.presentationModule
 import remote.remoteModule
 import org.koin.android.ext.koin.androidContext

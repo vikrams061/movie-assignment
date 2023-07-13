@@ -1,4 +1,4 @@
-package movie
+package movie.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import movie.item.ParcelableMovie
 import movie.assignment.databinding.ActivityMovieInfoBinding
 
 /** The launch function is a static method that can be used to start the MovieInfoActivity from an Activity
