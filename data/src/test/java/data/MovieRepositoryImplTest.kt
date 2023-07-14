@@ -113,27 +113,27 @@ class MovieRepositoryImplTest {
     fun `should give data from cache if it is not stale`() {
         runBlocking {
             coEvery {
-                movieCacheDataSource.loadMovieByImdbId("tt12345")
+                movieCacheDataSource.loadMovieByImdbId("dd650fb7")
             } returns Pair(
                 MovieDataModel(
                     "Batman",
                     "2005",
-                    "tt12345",
+                    "dd650fb7",
                     "movie"
                 ),
                 System.currentTimeMillis() - 4 * 60 * 1000 // 4 minutes before
             )
-            val result = searchRepository.searchMovieByImdbId("tt12345")
+            val result = searchRepository.searchMovieByImdbId("dd650fb7")
             assertThat(result).isEqualTo(
                 Movie(
                     "Batman",
                     "2005",
-                    "tt12345",
+                    "dd650fb7",
                     MovieType.Movie
                 )
             )
             coVerifyAll {
-                movieCacheDataSource.loadMovieByImdbId("tt12345")
+                movieCacheDataSource.loadMovieByImdbId("dd650fb7")
                 movieRemoteDataSource wasNot Called
             }
         }
@@ -143,12 +143,12 @@ class MovieRepositoryImplTest {
     fun `should fetch data from remote if it is stale`() {
         runBlocking {
             coEvery {
-                movieCacheDataSource.loadMovieByImdbId("tt12345")
+                movieCacheDataSource.loadMovieByImdbId("dd650fb7")
             } returns Pair(
                 MovieDataModel(
                     "Batman",
                     "2005",
-                    "tt12345",
+                    "dd650fb7",
                     "movie"
                 ),
                 System.currentTimeMillis() - 6 * 60 * 1000 // 6 minutes before
@@ -157,26 +157,26 @@ class MovieRepositoryImplTest {
                 movieCacheDataSource.saveMovie(any())
             } just Runs
             coEvery {
-                movieRemoteDataSource.searchMoviesByImdbId("tt12345")
+                movieRemoteDataSource.searchMoviesByImdbId("dd650fb7")
             } returns MovieDataModel(
                 "Batman remote",
                 "2005",
-                "tt12345",
+                "dd650fb7",
                 "movie"
             )
-            val result = searchRepository.searchMovieByImdbId("tt12345")
+            val result = searchRepository.searchMovieByImdbId("dd650fb7")
             assertThat(result).isEqualTo(
                 Movie(
                     "Batman remote",
                     "2005",
-                    "tt12345",
+                    "dd650fb7",
                     MovieType.Movie
                 )
             )
             coVerifyAll {
-                movieCacheDataSource.loadMovieByImdbId("tt12345")
+                movieCacheDataSource.loadMovieByImdbId("dd650fb7")
                 movieCacheDataSource.saveMovie(any())
-                movieRemoteDataSource.searchMoviesByImdbId("tt12345")
+                movieRemoteDataSource.searchMoviesByImdbId("dd650fb7")
             }
         }
     }
@@ -185,32 +185,32 @@ class MovieRepositoryImplTest {
     fun `should fetch data from remote if it cache throws`() {
         runBlocking {
             coEvery {
-                movieCacheDataSource.loadMovieByImdbId("tt12345")
+                movieCacheDataSource.loadMovieByImdbId("dd650fb7")
             } throws Throwable()
             coEvery {
                 movieCacheDataSource.saveMovie(any())
             } just Runs
             coEvery {
-                movieRemoteDataSource.searchMoviesByImdbId("tt12345")
+                movieRemoteDataSource.searchMoviesByImdbId("dd650fb7")
             } returns MovieDataModel(
                 "Batman remote",
                 "2005",
-                "tt12345",
+                "dd650fb7",
                 "movie"
             )
-            val result = searchRepository.searchMovieByImdbId("tt12345")
+            val result = searchRepository.searchMovieByImdbId("dd650fb7")
             assertThat(result).isEqualTo(
                 Movie(
                     "Batman remote",
                     "2005",
-                    "tt12345",
+                    "dd650fb7",
                     MovieType.Movie
                 )
             )
             coVerifyAll {
-                movieCacheDataSource.loadMovieByImdbId("tt12345")
+                movieCacheDataSource.loadMovieByImdbId("dd650fb7")
                 movieCacheDataSource.saveMovie(any())
-                movieRemoteDataSource.searchMoviesByImdbId("tt12345")
+                movieRemoteDataSource.searchMoviesByImdbId("dd650fb7")
             }
         }
     }
@@ -219,32 +219,32 @@ class MovieRepositoryImplTest {
     fun `should fetch data from remote if it cache returns null`() {
         runBlocking {
             coEvery {
-                movieCacheDataSource.loadMovieByImdbId("tt12345")
+                movieCacheDataSource.loadMovieByImdbId("dd650fb7")
             } returns null
             coEvery {
                 movieCacheDataSource.saveMovie(any())
             } just Runs
             coEvery {
-                movieRemoteDataSource.searchMoviesByImdbId("tt12345")
+                movieRemoteDataSource.searchMoviesByImdbId("dd650fb7")
             } returns MovieDataModel(
                 "Batman remote",
                 "2005",
-                "tt12345",
+                "dd650fb7",
                 "movie"
             )
-            val result = searchRepository.searchMovieByImdbId("tt12345")
+            val result = searchRepository.searchMovieByImdbId("dd650fb7")
             assertThat(result).isEqualTo(
                 Movie(
                     "Batman remote",
                     "2005",
-                    "tt12345",
+                    "dd650fb7",
                     MovieType.Movie
                 )
             )
             coVerifyAll {
-                movieCacheDataSource.loadMovieByImdbId("tt12345")
+                movieCacheDataSource.loadMovieByImdbId("dd650fb7")
                 movieCacheDataSource.saveMovie(any())
-                movieRemoteDataSource.searchMoviesByImdbId("tt12345")
+                movieRemoteDataSource.searchMoviesByImdbId("dd650fb7")
             }
         }
     }
@@ -253,32 +253,32 @@ class MovieRepositoryImplTest {
     fun `should fetch data from remote successfully even if saving fails`() {
         runBlocking {
             coEvery {
-                movieCacheDataSource.loadMovieByImdbId("tt12345")
+                movieCacheDataSource.loadMovieByImdbId("dd650fb7")
             } returns null
             coEvery {
                 movieCacheDataSource.saveMovie(any())
             } throws Throwable()
             coEvery {
-                movieRemoteDataSource.searchMoviesByImdbId("tt12345")
+                movieRemoteDataSource.searchMoviesByImdbId("dd650fb7")
             } returns MovieDataModel(
                 "Batman remote",
                 "2005",
-                "tt12345",
+                "dd650fb7",
                 "movie"
             )
-            val result = searchRepository.searchMovieByImdbId("tt12345")
+            val result = searchRepository.searchMovieByImdbId("dd650fb7")
             assertThat(result).isEqualTo(
                 Movie(
                     "Batman remote",
                     "2005",
-                    "tt12345",
+                    "dd650fb7",
                     MovieType.Movie
                 )
             )
             coVerifyAll {
-                movieCacheDataSource.loadMovieByImdbId("tt12345")
+                movieCacheDataSource.loadMovieByImdbId("dd650fb7")
                 movieCacheDataSource.saveMovie(any())
-                movieRemoteDataSource.searchMoviesByImdbId("tt12345")
+                movieRemoteDataSource.searchMoviesByImdbId("dd650fb7")
             }
         }
     }

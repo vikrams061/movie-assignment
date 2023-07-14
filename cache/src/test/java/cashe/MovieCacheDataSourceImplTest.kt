@@ -26,29 +26,29 @@ class MovieCacheDataSourceImplTest {
     @Test
     fun `should return desired item if it exists`() {
         coEvery {
-            dao.getMovieByImdbId("tt12345")
+            dao.getMovieByImdbId("dd650fb7")
         } returns MovieCacheModel(
-            "tt12345",
+            "dd650fb7",
             "Batman",
             "2005",
             "movie",
             recordedAt = 1430000000000
         )
         runBlocking {
-            val result = dataSource.loadMovieByImdbId("tt12345")
+            val result = dataSource.loadMovieByImdbId("dd650fb7")
             assertThat(result).isEqualTo(
                 Pair(
                     MovieDataModel(
                         "Batman",
                         "2005",
-                        "tt12345",
+                        "dd650fb7",
                         "movie"
                     ),
                     1430000000000
                 )
             )
             coVerify(exactly = 1) {
-                dao.getMovieByImdbId("tt12345")
+                dao.getMovieByImdbId("dd650fb7")
             }
         }
     }
@@ -63,10 +63,10 @@ class MovieCacheDataSourceImplTest {
         } returns null
 
         runBlocking {
-            val result = dataSource.loadMovieByImdbId("tt12345")
+            val result = dataSource.loadMovieByImdbId("dd650fb7")
             assertThat(result).isNull()
             coVerify(exactly = 1) {
-                dao.getMovieByImdbId("tt12345")
+                dao.getMovieByImdbId("dd650fb7")
             }
         }
     }
@@ -85,7 +85,7 @@ class MovieCacheDataSourceImplTest {
                 MovieDataModel(
                     "Batman",
                     "2005",
-                    "tt12345",
+                    "dd650fb7",
                     "movie"
                 )
             )
@@ -96,7 +96,7 @@ class MovieCacheDataSourceImplTest {
                     if (position == 0) {
                         it.title == "Batman"
                                 && it.year == "2005"
-                                && it.imdbId == "tt12345"
+                                && it.imdbId == "dd650fb7"
                                 && it.type == "movie"
                     } else false
                 }

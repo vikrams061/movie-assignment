@@ -19,18 +19,24 @@ import presentation.SearchViewState.SearchUi.LoadingNextPage
 import presentation.SearchViewState.SearchUi.ReloadNextPage
 import kotlin.math.ceil
 
+// The SearchViewModel represents the ViewModel for searching movies
 class SearchViewModel(
     private val searchMoviesUseCase: SearchMoviesUseCase,
 ) : BaseViewModel<SearchViewState>() {
 
+
+    // Job for managing the search operation
     private var searchJob: Job? = null
 
+    // Mutable state flow representing the current view state
     override val _viewState = MutableStateFlow(SearchViewState(Idle))
 
+    // Shared flow for handling navigation requests
     private val _navigationRequest = MutableSharedFlow<MovieInfoEvent>()
     val navigationRequest: SharedFlow<MovieInfoEvent>
         get() = _navigationRequest
 
+    // Function for initiating a movie search based on a keyword
     fun searchMovies(keyword: String) {
         searchJob?.cancel()
         if (keyword.isEmpty()) {
