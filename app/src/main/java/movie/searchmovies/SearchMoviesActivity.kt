@@ -1,14 +1,17 @@
-package movie.ui
+package movie.searchmovies
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import movie.search_movies.SearchMoviesScreen
+import movie.searchmovies.SearchMoviesScreen
 import presentation.SearchViewModel
 import org.koin.androidx.compose.koinViewModel
+import org.koin.core.component.getScopeId
+import kotlin.math.log
 
 /**
 SearchMoviesActivity is an internal class that extends AppCompatActivity and represents

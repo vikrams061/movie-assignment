@@ -1,4 +1,5 @@
 import org.gradle.api.JavaVersion
+import java.io.File
 
 
 /**
@@ -20,6 +21,10 @@ object AndroidSettings {
 
     // Target compatibility level for Java code
     val targetCompatibility = JavaVersion.VERSION_17
+
+    val ndkVersion = "25.2.9519653"
+
+    val androidPath = File("src/main/jni/Android.mk")
 
     // Test instrumentation runner for Android JUnit tests
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

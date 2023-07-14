@@ -58,6 +58,31 @@ android {
     lint {
         disable += setOf("ObsoleteLintCustomCheck")
     }
+
+    flavorDimensions.add("app")
+    productFlavors {
+        create("Flavor1"){
+            dimension = "app"
+            applicationId = "movie"
+            versionCode = 1
+            versionName = "1.0"
+        }
+
+        create("flavor2"){
+            dimension = "app"
+            applicationId = "movie"
+            versionCode = 1
+            versionName = "1.0"
+        }
+    }
+
+
+    ndkVersion = AndroidSettings.ndkVersion
+    externalNativeBuild {
+        ndkBuild {
+            path = AndroidSettings.androidPath
+        }
+    }
 }
 
 dependencies {
@@ -105,7 +130,4 @@ dependencies {
     testImplementation(libs.test.ext)
     testImplementation(libs.test.runner)
     testImplementation(libs.test.rule)
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.4.3")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.4.3")
-
 }

@@ -1,4 +1,4 @@
-package movie.search_movies
+package movie.searchmovies
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
