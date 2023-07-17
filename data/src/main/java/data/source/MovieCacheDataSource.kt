@@ -5,7 +5,7 @@ import data.model.MovieDataModel
 
 interface MovieCacheDataSource {
     /**
-     * fetch a movie from local SQLite database given its imdb id
+     * fetch a movie from Room database given its imdb id
      * @param imdbId
      */
     suspend fun loadMovieByImdbId(
@@ -13,7 +13,7 @@ interface MovieCacheDataSource {
     ) : Pair<MovieDataModel, Long>?
 
     /**
-     * save a movie to local SQLite database
+     * save a movie to Room database
      */
     suspend fun saveMovie(movie: MovieDataModel)
 }

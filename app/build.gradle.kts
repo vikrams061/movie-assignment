@@ -58,31 +58,6 @@ android {
     lint {
         disable += setOf("ObsoleteLintCustomCheck")
     }
-
-    flavorDimensions.add("app")
-    productFlavors {
-        create("Flavor1"){
-            dimension = "app"
-            applicationId = "movie"
-            versionCode = 1
-            versionName = "1.0"
-        }
-
-        create("flavor2"){
-            dimension = "app"
-            applicationId = "movie"
-            versionCode = 1
-            versionName = "1.0"
-        }
-    }
-
-
-    ndkVersion = AndroidSettings.ndkVersion
-    externalNativeBuild {
-        ndkBuild {
-            path = AndroidSettings.androidPath
-        }
-    }
 }
 
 dependencies {

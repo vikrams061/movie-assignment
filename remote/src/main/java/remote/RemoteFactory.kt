@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 /**
- * Factory object to build Rest APIs and okhttp clients to use in remove module
+ * Factory object to build Rest APIs and okhttp clients to use in remote module
  */
 object RemoteFactory {
 
